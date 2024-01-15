@@ -1,0 +1,231 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a box-sizing border-box to all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+}
+
+.nav-item {
+    margin-right: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1em;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #3498db;
+}
+
+.hamburger {
+    display: none; /* Hide the hamburger on larger screens */
+}
+
+.social-media {
+    display: flex;
+    gap: 10px;
+}
+
+/* Blog Post Card styles */
+.blog-post-card {
+    max-width: 100%;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+    background-color: #2980b9;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Blog Post styles */
+.blog-post {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post header h1 {
+    margin-top: 0;
+    font-size: 1.8em;
+    color: #333;
+}
+
+.author-info {
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    background-color: #3498db;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.author-details h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Hide the menu on smaller screens */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #333;
+        z-index: 1;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-item {
+        margin: 0;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+    }
+
+    .nav-link {
+        padding: 10px;
+        display: block;
+    }
+
+    .blog-post-card {
+        margin: 20px 10px;
+    }
+
+    .card-content h2 {
+        font-size: 1.2em;
+    }
+
+    .button-container {
+        flex-direction: row;
+    }
+
+    .button {
+        margin-right: 10px;
+    }
+
+    .blog-post header h1 {
+        font-size: 1.5em;
+    }
+
+    .author-info {
+        align-items: flex-start;
+    }
+}
+
+/* Responsive styles for even smaller screens */
+@media screen and (max-width: 480px) {
+    .card-content h2 {
+        font-size: 1em;
+    }
+
+    .button {
+        padding: 8px 15px;
+    }
+
+    .blog-post header h1 {
+        font-size: 1.2em;
+    }
+
+    .author-details h2 {
+        font-size: 1em;
+    }
+}
