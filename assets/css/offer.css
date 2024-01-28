@@ -1,0 +1,224 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.nav-logo {
+    font-size: 1.5em;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item {
+    margin-right: 20px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #007BFF;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+}
+
+/* Home section styles */
+.section {
+    display: block;
+    padding: 50px 20px;
+    
+    
+}
+#section-one,
+#section-three {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    background-color: #6e6c6c;
+    border-radius: 10px;
+    padding: 17px;
+    height: 30rem;
+    overflow: hidden;
+    border: 5px hsl(0, 0%, 0%);
+    margin: 0 -13% 5% 10%;
+}
+
+
+
+#section-one{
+    margin-top: 4%;
+}
+
+#section-two,
+#section-four {
+    text-align: right;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding-left: 140px;
+    padding-right: 135px;
+    height: 30rem;
+    align-items: center;
+    overflow: hidden;
+    border: 5px #000;
+    margin: 0 10% 5% -13%;
+    gap: 5%;
+}
+
+
+.section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#section-three,.card{
+    display: block;
+}
+
+#section-four{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0%;
+    align-items: center;
+    justify-content: center;
+    right: -27%;
+    font-size: 186%;
+    width: 100%;
+}
+
+#button_3{
+    width: 190%;
+    box-shadow: 6px 5px 10px #555;
+    height: 86%;
+    border-radius: 12px;
+}
+
+/* Card css*/
+.card {
+    display: inline-block;
+    flex-direction: column;
+    width: 225px;
+    height: 310px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card h3 {
+    margin: 0;
+    color: #333;
+}
+
+.card p {
+    margin-top: 5px;
+    color: #666;
+}
+
+#card-1{
+    background-image: url(../img/work_with_us.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#card-2{
+    background-image: url(../img/search.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#card-3{
+    background-image: url(../img/discover.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#card-4{
+    background-image: url(../img/client.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .nav-item {
+        margin: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 15px;
+        text-align: center;
+        color: #fff;
+    }
+
+    .navbar.active .nav-menu {
+        display: flex;
+    }
+}
