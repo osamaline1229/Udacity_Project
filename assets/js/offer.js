@@ -50,3 +50,17 @@ function selectFeature(featureNum) {
     var selectedFeature = document.querySelector('.feature:nth-of-type(' + featureNum + ')');
     selectedFeature.classList.add('selected');
 }
+
+
+const navLinks = document.querySelectorAll('.nav-link');
+
+// Loop through each nav link and add a click event listener
+navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        // Remove the 'active' class from all nav links
+        navLinks.forEach(navLink => navLink.classList.remove('active'));
+
+        // Add the 'active' class to the clicked nav link
+        this.classList.add('active');
+    });
+});
