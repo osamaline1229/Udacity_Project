@@ -1,24 +1,44 @@
-// JavaScript for smooth scrolling and hamburger menu toggle
-document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navMenu');
+document.addEventListener("DOMContentLoaded", function() {
+    // Array of navbar items
+    const navbarItems = [
+        { name: "News", link: "#section-one", class: "nav-menu" },
+        { name: "About", link: "#section-two", class: "nav-menu" },
+        { name: "Different Features", link: "#section-three", class: "nav-menu" },
+        { name: "Contact us", link: "#section-four", class: "nav-menu" }
+    ];
 
-    hamburger.addEventListener('click', function () {
-        navMenu.classList.toggle('active');
-    });
+    const navbar = document.getElementById("navbar");
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            navMenu.classList.remove('active');
+    // Loop through navbar items and dynamically create list items
+    navbarItems.forEach(function(item) {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+        a.textContent = item.name;
+        a.href = item.link;
+        a.className = item.class; 
+
+        li.appendChild(a);
+        navbar.appendChild(li);
+
+        // Add click event listener to each navbar item
+        a.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            scrollToSection(item.link); 
+            highlightNavItem(a); 
         });
     });
 
-    document.addEventListener('scroll', function () {
+    // Add 'click' event listener to hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navbar'); // Changed to 'navbar'
+
+    hamburger.addEventListener('click', function() {
+        navMenu.classList.toggle('active'); // Toggles 'active' class on navbar
+    });
+
+    // Add 'scroll' event listener to highlight navbar items when scrolling
+    document.addEventListener('scroll', function() {
         let sections = document.querySelectorAll('.section');
         let scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -28,39 +48,35 @@ document.addEventListener('DOMContentLoaded', function () {
             let sectionHeight = section.offsetHeight;
 
             if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                document.querySelectorAll('.nav-link').forEach(link => {
+                document.querySelectorAll('.nav-menu').forEach(link => {
                     link.classList.remove('active');
                 });
                 document.querySelector(`a[href="#${sectionId}"]`).classList.add('active');
+                section.classList.add('active');
+                section.classList.add('highlight'); // Add 'active' class to the section
+            } else {
+                section.classList.remove('active'); // Remove 'active' class from other sections
             }
         });
     });
-});
 
+    // Function to scroll to a section smoothly
+    function scrollToSection(sectionId) {
+        var section = document.querySelector(sectionId);
+        section.scrollIntoView({ behavior: 'smooth' });
+        const paddingTop = 20; 
+        const offset = section.offsetTop - paddingTop;
+        window.scrollTo({
+            top: offset,
+            behavior: 'smooth'
+        });
+    }
 
-
-function selectFeature(featureNum) {
-    // Remove 'selected' class from all features
-    var features = document.querySelectorAll('.feature');
-    features.forEach(function(feature) {
-        feature.classList.remove('selected');
-    });
-    
-    // Add 'selected' class to the clicked feature
-    var selectedFeature = document.querySelector('.feature:nth-of-type(' + featureNum + ')');
-    selectedFeature.classList.add('selected');
-}
-
-
-const navLinks = document.querySelectorAll('.nav-link');
-
-// Loop through each nav link and add a click event listener
-navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-        // Remove the 'active' class from all nav links
-        navLinks.forEach(navLink => navLink.classList.remove('active'));
-
-        // Add the 'active' class to the clicked nav link
-        this.classList.add('active');
-    });
+    // Function to highlight the clicked navigation item
+    function highlightNavItem(selectedNavItem) {
+        document.querySelectorAll('.nav-menu').forEach(navItem => {
+            navItem.classList.remove('active');
+        });
+        selectedNavItem.classList.add('active');
+    }
 });
