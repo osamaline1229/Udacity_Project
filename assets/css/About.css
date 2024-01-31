@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+@import url(contact.css);
 
 /* Global styles for all devices */
 body {
   font-family: 'Roboto', sans-serif;
-  margin: 0;
+  margin: 94px 0 0 0;
   padding: 0;
 }
 
@@ -40,6 +41,11 @@ body {
   .about p {
     font-size: 1em;
   }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+}
 }
 
 /* Responsive styles for even smaller screens */
@@ -51,4 +57,8 @@ body {
   .about p {
     font-size: 0.9em;
   }
+  .hamburger {
+    display: block;
+    cursor: pointer;
+}
 }

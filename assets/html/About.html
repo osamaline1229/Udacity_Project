@@ -1,73 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>About me</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../css/Style.css" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="header">
-      <nav class="navbar">
-        <a href="#" class="nav-logo">WebDev.</a>
-        <ul class="nav-menu">
-          <li class="nav-item">
-            <a href="../../index.html" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="About.html" class="nav-link active">About</a>
-          </li>
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link ">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a href="offer.html" class="nav-link">Offer</a>
-          </li>
-        </ul>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-        <div class="social-media">
-          <a href="#"><i class="bx bxl-twitter"></i></a>
-          <a href="#"><i class="bx bxl-facebook-circle"></i></a>
-          <a href="#"><i class="bx bxl-instagram-alt"></i></a>
-        </div>
-      </nav>
-    </header>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>About me</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../css/About.css" />
+  <link rel="stylesheet" href="../../Style.css" />
 
-    <section class="about">
-      <div class="about-content">
-        <h2>About Us</h2>
-        <p>
-          Welcome to our news platform, where we bring you the latest updates
-          and insightful stories from around the world. Our dedicated team works
-          tirelessly to provide you with accurate and timely information on a
-          variety of topics, including current events, international affairs,
-          and more.
-        </p>
-        <p>
-          At our core, we believe in the power of knowledge and its ability to
-          shape a better understanding of the world. Our goal is to deliver news
-          that informs, educates, and engages our audience. Whether you are
-          interested in global politics, cultural developments, or human
-          interest stories, we've got you covered.
-        </p>
-        <p>
-          Explore our news sections and stay informed about the ever-changing
-          landscape of our interconnected world. We value your trust and strive
-          to be your go-to source for reliable and compelling news stories.
-        </p>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a href="#" class="nav-logo">WebDev.</a>
+      <!-- Hamburger icon -->
+      <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
-    </section>
+      <!-- Navigation menu -->
+      <ul class="nav-menu" id="navbar">
+        <li class="nav-item">
+          <a href="../../index.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="About.html" class="nav-link active">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">Contact</a>
+        </li>
+      </ul>
+      <div class="social-media">
+        <a href="#"><i class="bx bxl-twitter"></i></a>
+        <a href="#"><i class="bx bxl-facebook-circle"></i></a>
+        <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+      </div>
+    </nav>
+  </header>
 
-    <script src="" async defer></script>
-  </body>
+  <section class="about">
+    <div class="about-content">
+      <h2>About Us</h2>
+      <p>
+        Welcome to our news platform, where we bring you the latest updates
+        and insightful stories from around the world. Our dedicated team works
+        tirelessly to provide you with accurate and timely information on a
+        variety of topics, including current events, international affairs,
+        and more.
+      </p>
+      <p>
+        At our core, we believe in the power of knowledge and its ability to
+        shape a better understanding of the world. Our goal is to deliver news
+        that informs, educates, and engages our audience. Whether you are
+        interested in global politics, cultural developments, or human
+        interest stories, we've got you covered.
+      </p>
+      <p>
+        Explore our news sections and stay informed about the ever-changing
+        landscape of our interconnected world. We value your trust and strive
+        to be your go-to source for reliable and compelling news stories.
+      </p>
+    </div>
+  </section>
+
+  <!-- JavaScript to toggle the navigation menu -->
+  <script src="../js/humberger.js">
+
+  </script>
+</body>
 </html>
