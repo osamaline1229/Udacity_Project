@@ -16,25 +16,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
         a.textContent = item.name;
         a.href = item.link;
-        a.className = item.class; 
+        a.className = item.class;
 
         li.appendChild(a);
         navbar.appendChild(li);
 
         // Add click event listener to each navbar item
         a.addEventListener('click', function(event) {
-            event.preventDefault(); 
-            scrollToSection(item.link); 
-            highlightNavItem(a); 
+            event.preventDefault();
+            scrollToSection(item.link);
         });
-    });
-
-    // Add 'click' event listener to hamburger menu
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navbar'); // Changed to 'navbar'
-
-    hamburger.addEventListener('click', function() {
-        navMenu.classList.toggle('active'); // Toggles 'active' class on navbar
     });
 
     // Add 'scroll' event listener to highlight navbar items when scrolling
@@ -48,43 +39,34 @@ document.addEventListener("DOMContentLoaded", function() {
             let sectionHeight = section.offsetHeight;
 
             if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                // Highlight navbar item corresponding to the section in view
                 document.querySelectorAll('.nav-menu').forEach(link => {
                     link.classList.remove('active');
                 });
-                document.querySelector(`a[href="#${sectionId}"]`).classList.add('active');
+                document.querySelector(`a[href="#${sectionId}"]`).classList.add('active', 'custom-color');
+            }
+
+            // Highlight the section in the center of the viewport
+            let viewportHeight = window.innerHeight;
+            let sectionCenter = sectionTop + sectionHeight / 2;
+
+            if (sectionCenter >= scrollPosition && sectionCenter <= scrollPosition + viewportHeight) {
                 section.classList.add('active');
-                section.classList.add('highlight'); // Add 'active' class to the section
             } else {
-                section.classList.remove('active'); // Remove 'active' class from other sections
+                section.classList.remove('active');
             }
         });
     });
 
     // Function to scroll to a section smoothly
     function scrollToSection(sectionId) {
-        var section = document.querySelector(sectionId);
+        const section = document.querySelector(sectionId);
         section.scrollIntoView({ behavior: 'smooth' });
-        const paddingTop = 20; 
+        const paddingTop = 150;
         const offset = section.offsetTop - paddingTop;
         window.scrollTo({
             top: offset,
             behavior: 'smooth'
         });
     }
-
-    // Function to highlight the clicked navigation item
-    function highlightNavItem(selectedNavItem) {
-        document.querySelectorAll('.nav-menu').forEach(navItem => {
-            navItem.classList.remove('active');
-        });
-        selectedNavItem.classList.add('active');
-    }
 });
-
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('navbar');
-
-hamburger.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-});
-

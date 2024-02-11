@@ -1,244 +1,307 @@
-@import url(assets/css/About.css);
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    width: 99%;
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+/* Reset styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-right: 0;
-    margin-left: 0;
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
 }
 
-
-
-.nav-logo {
-    font-size: 1.5em;
-    color: #fff;
-    text-decoration: none;
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
 }
 
-.nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+nav {
+  position: fixed;
+  width: 100%;
+  background-color: #675f5f;
+  padding: 10px;
+  text-align: center;
+  top: 0;
+  z-index: 1000;
 }
 
-.nav-item {
-    margin-right: 20px;
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  padding: 5px 10px;
+  transition: background-color 0.3s;
 }
 
-.nav-menu {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
+.nav-link:hover,
+.nav-link.active {
+  background-color: #001b86;
+}
+section {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* .nav-menu:hover {
-    color: #007BFF;
-} */
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
+h2 {
+  margin-bottom: 20px;
 }
 
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 3px 0;
+p {
+  line-height: 1.6;
 }
 
-body{
-    min-height: 150vh;
-    margin-bottom: 20%;
-}
-
-/* Home section styles */
-.section {
-
-  
-    min-height: 50vh;
-    margin-bottom: 10%;
-    
-    
-}
-#section-one,
-#section-three {
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    background-color: #f7f7f7;
-    border-radius: 10px;
-    
-    padding: 17px;
-    height: 30rem;
-    overflow: hidden;
-    border: 5px hsl(0, 0%, 0%);
-    margin: 0 -13% 5% 10%;
-}
-
-
-
-#section-one{
-    margin-top: 4%;
-}
-
-#section-two,
-#section-four {
-    text-align: right;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    padding-left: 140px;
-    padding-right: 135px;
-   
-    height: 30rem;
-    align-items: center;
-    overflow: hidden;
-    border: 5px #000;
-    margin: 0 10% 5% -13%;
-    gap: 5%;
-}
-
-
-
-
-.section h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-#section-three,.card{
-    display: block;
-}
-
-#section-four{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    right: -27%;
-    /* padding-top: 0px; */
-    padding-right: 0%;
-    padding-left: 0%;
-    margin-left: -50%;
-    font-size: 235%;
-    width: 150%;
-    margin-bottom: 30%;
-}
-
-#button_3{
-    width: 190%;
-    box-shadow: 6px 5px 10px #555;
-    height: 86%;
-    border-radius: 12px;
-}
-
-/* Card css*/
 .card {
-    display: inline-block;
-    flex-direction: column;
-    width: 225px;
-    height: 310px;
-    background-color: #f5f4f4;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    margin: 10px;
-    transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  width: calc(20% - 20px);
+  margin: 20px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  transition: transform 0.3s ease-in-out;
 }
 
 .card:hover {
-    transform: scale(1.05);
+  transform: translateY(-5px);
 }
 
 .card-content {
-    padding: 15px;
+  padding: 20px;
 }
 
 .card h3 {
-    margin: 0;
-    color: #333;
+  margin-bottom: 10px;
 }
 
 .card p {
-    margin-top: 5px;
-    color: #666;
+  font-size: 14px;
 }
 
-#card-1{
-    background-image: url(assets/img/work_with_us.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+/* Button styles */
+#button_3 {
+  background-color: #675f5f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-#card-2{
-    background-image: url(assets/img/search.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+#button_3:hover {
+  background-color: #4b4343;
 }
 
-#card-3{
-    background-image: url(assets/img/discover.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  
+  header h1 {
+    background-color: #333;
+    color: #fff;
+    padding-top: 75px;
+    
+  }
+  #section-three{
+    height: 75rem;
+  }
+  .card {
+    width: calc(33.33% - 20px);
+    font-size: 20px;
+
+    height: 10rem;
+ 
+  }
+  .section{
+    font-size: small;
+  }
+  #section-two img{
+    width: 350px;
+  }
 }
 
-#card-4{
-    background-image: url(assets/img/client.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+
+
+@media screen and (max-width: 400px) {
+  header h1 {
+    background-color: #333;
+    color: #fff;
+    padding-top: 75px;
+    
+  }
+  .card {
+    width: calc(10% - 20px);
+  }
 }
 
 .section.active {
-    background-color: rgb(35, 37, 37); 
+  opacity: 1;
 }
 
-/* Responsive styles for smaller screens */
+.section:nth-child(even+odd) {
+  background-color: #f4f4f4;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+}
+
+.section p {
+  line-height: 1.6;
+}
+
+/* Card styles */
+.card {
+  display: inline-block;
+  width: calc(20% - 20px);
+  margin: 20px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+}
+
+/* Button styles */
+#button_3 {
+  background-color: #675f5f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#button_3:hover {
+  background-color: #4b4343;
+}
 @media screen and (max-width: 768px) {
-    .nav-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-    }
+  .nav-menu {
+      display: none; /* Hide the menu on smaller screens */
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #333;
+      z-index: 1;
+  }
 
-    .nav-item {
-        margin: 0;
-    }
+  .nav-menu.active {
+      display: flex;
+  }
 
-    .hamburger {
+  .nav-item {
+      margin: 0;
+      text-align: center;
+  }
+
+  .hamburger {
       display: block;
       cursor: pointer;
   }
 
-    .navbar {
-        display: block;
-        padding: 15px;
-        text-align: center;
-        color: #fff;
-    }
+  .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 5px 0;
+  }
 
-    .navbar.active .nav-menu {
-        display: flex;
-    }
+  .nav-link {
+      padding: 10px;
+      display: block;
+  }
+
+  .blog-post-card {
+      margin: 20px 10px;
+  }
+
+  .card-content h2 {
+      font-size: 1.2em;
+  }
+
+  .button-container {
+      flex-direction: row;
+  }
+
+  .button {
+      margin-right: 10px;
+  }
+
+  .blog-post header h1 {
+      font-size: 1.5em;
+  }
+
+  .author-info {
+      align-items: flex-start;
+  }
+}
+/* Responsive styles */
+@media screen and (max-width: 1400px) {
+  .card {
+      width: calc(20% - 20px);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .card {
+      width: calc(25% - 20px);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .section {
+      padding: 30px 10px;
+  }
+
+  .card {
+      width: calc(33.33% - 20px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+      padding: 20px;
+  }
+
+  .card {
+      width: calc(50% - 20px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .card {
+      width: calc(100% - 20px);
+  }
+}
+
+@media screen and (max-width: 428px) {
+  .nav-link {
+      margin: 0 5px;
+      padding: 5px;
+      font-size: 14px;
+  }
 }
